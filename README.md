@@ -1,4 +1,4 @@
 # JelthonMusic
 
 ### Heroku Deploy
-  - [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://github.com/yddde/jelthonmusic)
+  - [![Deploy To Heroku]](https://heroku.com/deploy?template=https://github.com/yddde/jelthonmusic)
