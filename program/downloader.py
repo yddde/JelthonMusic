@@ -35,9 +35,10 @@ ydl_opts = {
 }
 
 
-@Client.on_message(filters.command(["بحث", "/song"], prefixes=f""))
+@Client.on_message(command(["حميل", f"تحميل", "song"]) & ~filters.edited)
+def song(_, message):
     query = " ".join(message.command[1:])
-    m = message.reply("**✶ جاري البحث انتظر قليلآ...**")
+    m = message.reply("✶ جاري البحث انتظر قليلآ...")
     ydl_ops = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -59,7 +60,7 @@ ydl_opts = {
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f"**🎧  [ 𝙹𝚎𝚕𝚝𝚑𝚘𝚗 𝙼𝚞𝚜𝚒𝚌 ](https://t.me/JelthonMusic)**"
+        rep = f"**🎧 الرافع [🎶 𝑩𝑨𝑲𝑨𝑹 𝑴𝑼𝑺𝑰𝑪 ](https://t.me/bakar10_bot)**"
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
@@ -134,7 +135,7 @@ async def vsong(client, message):
         print(e)
 
 
-@Client.on_message(command(["lyric", f"lc"]))
+@Client.on_message(command(["lyric", f"بحث"]))
 async def lyrics(_, message):
     try:
         if len(message.command) < 2:
@@ -148,4 +149,4 @@ async def lyrics(_, message):
         result = f"{resp['data']}"
         await rep.edit(result)
     except Exception:
-        await rep.edit("✶ **لم يتم العثور على نتائج كلمات غنائية**\n\n» **يرجى إعطاء اسم أغنية صالح**")
+        await rep.edit("❌ **لم يتم العثور على نتائج كلمات غنائية**\n\n» **يرجى إعطاء اسم أغنية صالح**")
