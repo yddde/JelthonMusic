@@ -36,7 +36,7 @@ async def cbstart(_, query: CallbackQuery):
                 [InlineKeyboardButton("• طريقه التفعيل •", callback_data="cbhowtouse")],
                 [
                     InlineKeyboardButton("• الاوامر •", callback_data="cbcmds"),
-                    InlineKeyboardButton("• المطورين •", callback_data="cbcmds"),
+                    InlineKeyboardButton("• المطورين •", callback_data="cbsudo"),
                 ],
                 [
                     InlineKeyboardButton(
