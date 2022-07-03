@@ -60,12 +60,12 @@ def song(_, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f"**🎧 الرافع [🎶 𝑩𝑨𝑲𝑨𝑹 𝑴𝑼𝑺𝑰𝑪 ](https://t.me/bakar10_bot)**"
+        rep = f"**🎧 الرافع [𝙹𝚎𝚕𝚝𝚑𝚘𝚗 𝙼𝚞𝚜𝚒𝚌 ](https://t.me/JelthonMusic)**"
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
             secmul *= 60
-        m.edit("✶ جاري تحميل الملف...")
+        m.edit("✶ جاري رفع الملف...")
         message.reply_audio(
             audio_file,
             caption=rep,
@@ -121,7 +121,7 @@ async def vsong(client, message):
     except Exception as e:
         return await msg.edit(f"🚫 **خطأ:** {e}")
     preview = wget.download(thumbnail)
-    await msg.edit("✶ **جاري تحميل الفيديو...**")
+    await msg.edit("✶ **جاري رفع الفيديو...**")
     await message.reply_video(
         file_name,
         duration=int(ytdl_data["duration"]),
