@@ -166,7 +166,7 @@ async def cbsudo(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""- **مرحبًا تم برمجة هذا البوت وتطويره من قبل:
         
-✶ [𝒌𝒐𝒌𝒐](t.me/T_G_L) & [ㅤㅤ𝚉𝚊𝚒𝚍 ₁₆](t.me/MDDDP) ✶
+✶ 𝒌𝒐𝒌𝒐 : @T_G_L & ㅤㅤ𝚉𝚊𝚒𝚍 ₁₆ : @MDDDP ✶
 
 ✶ قناة البوت @{UPDATES_CHANNEL}""",
         reply_markup=InlineKeyboardMarkup(
