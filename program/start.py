@@ -75,7 +75,7 @@ async def start_(client: Client, message: Message):
                 [InlineKeyboardButton("• طريقه التفعيل •", callback_data="cbhowtouse")],
                 [
                     InlineKeyboardButton("• الاوامر •", callback_data="cbcmds"),
-                    InlineKeyboardButton("• المطورين •", callback_data="cbcmds"),
+                    InlineKeyboardButton("• المطورين •", callback_data="cbsudo"),
                 ],
                 [
                     InlineKeyboardButton(
